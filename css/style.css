@@ -1,0 +1,124 @@
+
+/* Pop-up CSS */
+
+.popup {
+    display: none; /* Hide the popup */
+    position: fixed;
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Adjust to center the popup */
+    z-index: 1000; /* Make sure it appears on top of other content */
+    background-color: #98FB98; 
+    border-radius: 15px; 
+    padding: 20px; 
+    width: 300px; 
+    margin: 100px auto; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1),  
+    0 0 50px 5px #ff0051, /* Outer glow effect */
+    0 0 50px 15px rgba(152, 251, 152, 0.4); /* Additional glow */; 
+    font-size: 20px; /* Larger font size for popup */
+    font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif; /* Use the bubbly font */
+}
+
+#dog-love button {
+    background: none;
+    border: none;
+    font-size: 2em; 
+    cursor: pointer;
+}
+
+#dog-love button#bone:hover {
+    transform: rotate(-20deg);
+}
+
+#dog-love button#paws:hover {
+    transform: rotate(20deg); 
+}
+
+/* site CSS */
+
+body {
+    background: linear-gradient(to right, #FFFACD, #98FB98); 
+}
+
+
+/* Simba and Nala columns CSS */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+    padding: 20px;
+  }
+
+.card-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    perspective: 1000px;
+}
+  
+  #nala-column,
+  #simba-column {
+    padding: 20px;
+    position: relative;
+  }
+
+.biography-card, .likes-card, .dislikes-card, .fun-facts-card {
+    background-color: white;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 75%; 
+    height: 300px; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    box-sizing: border-box; 
+    /* overflow: auto;  */
+    overflow: hidden;
+    position: absolute;
+    transition: transform 0.5s ease, z-index 0s, opacity 0.5s ease; 
+    opacity: 1;
+}
+
+.card-container .biography-card,
+.card-container .likes-card,
+.card-container .dislikes-card,
+.card-container .fun-facts-card {
+    z-index: 5;
+    transform: translateY(0); /* Ensure the cards are stacked */
+}
+
+.card-container .biography-card.clicked,
+.card-container .likes-card.clicked,
+.card-container .dislikes-card.clicked,
+.card-container .fun-facts-card.clicked {
+    transform: translateY(-200px) rotateY(180deg); /* Moves the clicked card back and flips it */
+    opacity: 0.5;
+    z-index: 1; /* Send clicked card to the back */
+}
+
+.card-container .biography-card:nth-child(1) {
+    z-index: 4; /* Last card starts in front */
+}
+
+.card-container .likes-card:nth-child(2) {
+    z-index: 3; /* Next card in the stack */
+}
+
+.card-container .dislikes-card:nth-child(3) {
+    z-index: 2;
+}
+
+.card-container .fun-facts-card:nth-child(4) {
+    z-index: 1; /* First card in the stack */
+}
+
+
+/* .tilt {
+    cursor: pointer; /* Change cursor to indicate interactivity */
+/* } */ 
