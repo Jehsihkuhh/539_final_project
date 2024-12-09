@@ -88,13 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// For Lightbox
-document.addEventListener("DOMContentLoaded", function() {
-    var lightbox = new SimpleLightbox('.gallery a', {
-        captions: true, // 
-        captionDelay: 250 // =
-    });
-});
 
             
 
