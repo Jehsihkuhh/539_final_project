@@ -55,27 +55,38 @@ document.addEventListener('DOMContentLoaded', function() {
 // javascript for game section
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('fully loaded'); 
+    console.log('Page fully loaded');
 
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
-        console.log('this is the homepage');
+    function initializeTreatCounter() {
+        const giveTreatBtn = document.getElementById('give-treat-btn');
+        const treatCountDisplay = document.getElementById('count');
 
-    const giveTreatBtn = document.getElementById('give-treat-btn');
-    const treatCountDisplay = document.getElementById('count');
+        let treatCount = 0;
 
-    let treatCount = 0;
+        if (giveTreatBtn && treatCountDisplay) {
+            console.log('Treat counter elements found');
 
-    if (giveTreatBtn) {
-        giveTreatBtn.addEventListener('click', function() {
-        treatCount++; 
-        treatCountDisplay.textContent = treatCount; 
-        console.log(`treat count: ${treatCount}`);
+            giveTreatBtn.addEventListener('click', function() {
+                treatCount++;
+                treatCountDisplay.textContent = treatCount;
+                console.log(`Treat count: ${treatCount}`);
             });
+        } else {
+            console.error('Treat counter elements not found');
         }
+    }
+    if (
+        window.location.pathname.endsWith('index.html') || 
+        window.location.pathname === '/' || 
+        window.location.pathname.endsWith('/')
+    ) {
+        console.log('This is the homepage');
+        initializeTreatCounter();
     } else {
-        console.log('this is not the homepage');
+        console.log('This is not the homepage');
     }
 });
+
 
 
 
