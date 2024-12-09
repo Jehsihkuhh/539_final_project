@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=uSJXZ3LkABE */
 document.addEventListener('DOMContentLoaded', function() {
     console.log('loaded completely'); 
 
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
         console.log('this is the homepage');
 
     if (!sessionStorage.getItem('popupClicked')) {     
