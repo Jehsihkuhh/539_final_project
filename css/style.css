@@ -161,7 +161,7 @@ body {
 
 .intro p {
     text-align: center; 
-    margin-top: 20px; 
+    margin-top: 20px 20px 20px 20px; 
     padding: 0 50px 0 50px;
     font-size: 30px;
 }
@@ -431,5 +431,3 @@ div h3 {
         grid-template-columns: 1fr;
     }
 }
-
-
