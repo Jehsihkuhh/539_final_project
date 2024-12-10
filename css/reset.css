@@ -1,0 +1,25 @@
+/* Minimal Reset Template */
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Avoid resetting padding and margin globally unless needed */
+}
+
+
+html, body {
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
